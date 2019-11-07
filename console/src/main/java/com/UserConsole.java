@@ -1,5 +1,6 @@
 package com;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -30,7 +31,7 @@ public class UserConsole {
         System.out.println("<--- Table: " + table.getTableName() + " --->");
         System.out.println("1. Add instance");
         System.out.println("2. Remove instance");
-        // System.out.println("3. Choose Table");
+//        System.out.println("3. Choose Table");
         System.out.println("4. Show table\n");
         System.out.println("5. Delete duplicates\n");
         System.out.println("-1. Exit");
@@ -75,6 +76,18 @@ public class UserConsole {
                                             new Double(Double.parseDouble(inputData)),
                                             type));
                             break;
+                        case COLOR:
+                            tableInstanceBuilder.addBaseFieldInstance(
+                                    new BaseFieldInstance(name, inputData, type) );
+                            break;
+                        case ENUM:
+                            tableInstanceBuilder.addBaseFieldInstance(
+                                    new BaseFieldInstance(name, new Color(Color.decode(inputData).getRGB()), type) );
+                            break;
+                        case EMAIL:
+                            tableInstanceBuilder.addBaseFieldInstance(
+                                    new BaseFieldInstance(name, inputData, type) );
+                            break;
                         default:
                             return false;
                     }
@@ -94,7 +107,9 @@ public class UserConsole {
                 }
                 return true;
             }
+            case 2: {
 
+            }
             case 4: {
                 System.out.println(table);
                 return true;
@@ -142,7 +157,7 @@ public class UserConsole {
                 }
                 System.out.println("Ented for each field its type and value");
                 System.out.println(
-                        "Avalible types: INTEGER REAL CHAR LONGINT STRING CHARINTV");
+                        "Avalible types: INTEGER REAL CHAR LONGINT STRING COLOR");
                 TableBuilder newTable = Table.tableBuilder()
                         .setTableName(tableName);
                 for (int i = 0; i < number; ++i) {

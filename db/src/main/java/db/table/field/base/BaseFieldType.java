@@ -10,7 +10,9 @@ public enum BaseFieldType {
     CHAR("CHAR"),
     LONGINT("LONGINT"),
     STRING("STRING"),
-    COLOR("COLOR");
+    COLOR("COLOR"),
+    ENUM("ENUM"),
+    EMAIL("EMAIL");
 
     private final String tableFieldTypeName;
     private static final Map<String, BaseFieldType> lookup = new HashMap<String, BaseFieldType>();

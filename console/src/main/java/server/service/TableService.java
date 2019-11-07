@@ -33,9 +33,9 @@ public class TableService implements ITableService {
 
     }
 
-    public Boolean delteTableInstance(Table table,
-                                      TableInstance tableInstance) {
-        System.out.println("delteTableInstance");
+    public Boolean deleteTableInstance(Table table,
+                                       TableInstance tableInstance) {
+        System.out.println("deleteTableInstance");
         return storage.getDbs().stream()
                 .filter(x -> x.contains(table.getTableName())).findAny().get()
                 .getTableByName(table.getTableName())

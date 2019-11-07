@@ -23,6 +23,8 @@ import server.service.TableService;
 import service.IDbService;
 import service.ITableService;
 
+import java.util.Collections;
+
 @ComponentScan({ "server" })
 @SpringBootApplication
 public class App {
@@ -55,8 +57,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
-        // UserFriendlyConsoleInterface.start();
+        SpringApplication app = new SpringApplication(App.class);
+        ((SpringApplication) app).setDefaultProperties(Collections.singletonMap("server.port", "8092"));
+        app.run(args);
+
+        UserConsole.start();
     }
 
     @PostConstruct

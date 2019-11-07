@@ -12,7 +12,7 @@ public interface ITableService {
 
     public Boolean addTableInstance(Table table, TableInstance tableInstance);
 
-    public Boolean delteTableInstance(Table table, TableInstance tableInstance);
+    public Boolean deleteTableInstance(Table table, TableInstance tableInstance);
 
     public Boolean deleteDuplicates(Table table);
 

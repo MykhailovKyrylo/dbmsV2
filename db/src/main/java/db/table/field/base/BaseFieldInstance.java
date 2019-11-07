@@ -2,7 +2,6 @@ package db.table.field.base;
 
 import java.awt.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 public class BaseFieldInstance extends BaseField implements Serializable {
 
@@ -51,6 +50,24 @@ public class BaseFieldInstance extends BaseField implements Serializable {
                 }
                 break;
             }
+            case EMAIL: {
+                int indexOfDog = data.indexOf('@');
+                if (indexOfDog == -1 || indexOfDog == 0 || indexOfDog == data.length() - 1) {
+                    crData = null;
+                    break;
+                }
+                crData = data;
+                break;
+            }
+            case ENUM: {
+                String[] words = data.split("\\W+");
+                if (words.length == 0) {
+                    crData = null;
+                    break;
+                }
+                crData = words;
+                break;
+            }
             default:
                 crData = null;
         }
@@ -80,6 +97,12 @@ public class BaseFieldInstance extends BaseField implements Serializable {
                     break;
                 case COLOR:
                     parseData = Color.decode(stringData);
+                    break;
+                case ENUM:
+                    parseData = stringData.split("\\W+");
+                    break;
+                case EMAIL:
+                    parseData = ((String) stringData);
                     break;
             }
         }
@@ -135,7 +158,14 @@ public class BaseFieldInstance extends BaseField implements Serializable {
                 res += this.data + "\n";
                 break;
             case COLOR:
-                res += "$" + this.data + "\n";
+                res += this.data + "\n";
+                break;
+            case ENUM:
+                res += this.data + "\n";
+                break;
+            case EMAIL:
+                res += this.data + "\n";
+                break;
         }
         return res;
     }

@@ -51,7 +51,6 @@ public class DB implements Serializable {
      * Create table to a base
      */
     public Boolean createTable(Table table) {
-        // Check if table with that name already exist
         Boolean haveTable = this.tables.stream().filter(x -> x.getTableName().equals(table.getTableName())).findAny()
                 .isPresent();
 
