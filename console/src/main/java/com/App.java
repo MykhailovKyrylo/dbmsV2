@@ -61,7 +61,7 @@ public class App {
         ((SpringApplication) app).setDefaultProperties(Collections.singletonMap("server.port", "8092"));
         app.run(args);
 
-        UserConsole.start();
+//        UserConsole.start();
     }
 
     @PostConstruct

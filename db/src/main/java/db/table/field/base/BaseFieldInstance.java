@@ -99,7 +99,13 @@ public class BaseFieldInstance extends BaseField implements Serializable {
                     parseData = Color.decode(stringData);
                     break;
                 case ENUM:
-                    parseData = stringData.split("\\W+");
+                    String resultData = "[";
+                    String[] words = stringData.split(" ");
+                    for (String word : words) {
+                        resultData += word + "\n";
+                    }
+                    resultData += "]";
+                    parseData = resultData;
                     break;
                 case EMAIL:
                     parseData = ((String) stringData);

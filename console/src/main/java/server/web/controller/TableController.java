@@ -60,7 +60,7 @@ public class TableController {
     public ResponseEntity createTableByDB(
             @PathVariable(value = "dbName") String dbName,
             @RequestParam(value = "tableJson") Table table) throws Exception {
-        logger.info("GET /db/" + dbName + "/table method: getDb");
+        logger.info("POST /db/" + dbName + "/table method: getDb");
         Boolean result = false;
         DB db = dbService.getDB(dbName);
         if (db != null) {

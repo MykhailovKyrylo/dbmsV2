@@ -82,7 +82,8 @@ public class UserConsole {
                             break;
                         case ENUM:
                             tableInstanceBuilder.addBaseFieldInstance(
-                                    new BaseFieldInstance(name, new Color(Color.decode(inputData).getRGB()), type) );
+                                    new BaseFieldInstance(name, inputData, type) );
+
                             break;
                         case EMAIL:
                             tableInstanceBuilder.addBaseFieldInstance(
@@ -157,7 +158,7 @@ public class UserConsole {
                 }
                 System.out.println("Ented for each field its type and value");
                 System.out.println(
-                        "Avalible types: INTEGER REAL CHAR LONGINT STRING COLOR");
+                        "Avalible types: INTEGER REAL CHAR LONGINT STRING COLOR ENUM EMAIL");
                 TableBuilder newTable = Table.tableBuilder()
                         .setTableName(tableName);
                 for (int i = 0; i < number; ++i) {

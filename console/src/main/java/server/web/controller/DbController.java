@@ -32,7 +32,7 @@ public class DbController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/db")
-    public ResponseEntity createDb(@RequestParam String dbName)
+    public ResponseEntity createDb(@RequestParam("dbName") String dbName)
             throws Exception {
         logger.info("POST /db/ method: createDb");
         DB db = new DB(dbName);
@@ -45,7 +45,7 @@ public class DbController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/db")
-    public ResponseEntity deleteDb(@RequestParam String dbName)
+    public ResponseEntity deleteDb(@RequestParam("dbName") String dbName)
             throws Exception {
         logger.info("DELETE /db/ method: deleteDb");
         Boolean result = dbService.deleteDB(dbName);
