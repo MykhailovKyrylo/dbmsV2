@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Bootstrap Table Examples</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            {{dbName}}
+        </th>
+        <th>
+            {{#table}} {{tableName}} {{/table}}
+        </th>
+    </tr>
+    </thead>
+    <tr>
+    {{#baseFields}}
+        <td>{{tableFieldName}} ( {{type}} )</td>
+    {{/baseFields}}
+    </tr>
+    </thead>
+    <tbody>
+    {{#instances}}
+        <tr>
+            {{#baseFields}}
+                <td class="tableInstanceClass">{{data}}</td>
+            {{/baseFields}}
+        </tr>
+    {{/instances}}
+    </tbody>
+    <div>
+        <form method="post">
+            {{#baseFields}}
+                <input type="text" name="{{tableFieldName}}" placeholder="{{tableFieldName}}">
+            {{/baseFields}}
+            <button type = "submit">Add</button>
+        </form>
+    </div>
+</table>
+</body>

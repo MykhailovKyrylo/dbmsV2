@@ -9,6 +9,7 @@
         <module name="client" />
         <module name="db" />
         <module name="server" />
+        <module name="web-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="console" target="1.8" />
       <module name="db" target="8" />
       <module name="server" target="1.8" />
+      <module name="web-client" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
