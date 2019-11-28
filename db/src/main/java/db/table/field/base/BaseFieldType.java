@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum BaseFieldType {
-    INTEGER("INTEGER"),
-    REAL("REAL"),
-    CHAR("CHAR"),
-    LONGINT("LONGINT"),
     STRING("STRING"),
     COLOR("COLOR"),
     ENUM("ENUM"),
-    EMAIL("EMAIL");
+    EMAIL("EMAIL"),
+    INTEGER("INTEGER"),
+    REAL("REAL"),
+    CHAR("CHAR"),
+    LONGINT("LONGINT");
 
     private final String tableFieldTypeName;
     private static final Map<String, BaseFieldType> lookup = new HashMap<String, BaseFieldType>();

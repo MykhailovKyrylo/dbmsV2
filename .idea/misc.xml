@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/client/pom.xml" />
         <option value="$PROJECT_DIR$/console/pom.xml" />
         <option value="$PROJECT_DIR$/webclient/pom.xml" />
+        <option value="$PROJECT_DIR$/graphql-with-spring-boot-master/pom.xml" />
       </list>
     </option>
   </component>

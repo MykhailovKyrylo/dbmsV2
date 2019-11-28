@@ -9,6 +9,7 @@
         <module name="client" />
         <module name="db" />
         <module name="server" />
+        <module name="springboot-graphql" />
         <module name="web-client" />
       </profile>
     </annotationProcessing>
@@ -17,7 +18,14 @@
       <module name="console" target="1.8" />
       <module name="db" target="8" />
       <module name="server" target="1.8" />
+      <module name="springboot-graphql" target="1.8" />
       <module name="web-client" target="8" />
+      <module name="webclientgraphQL" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-graphql" options="-parameters" />
+    </option>
   </component>
 </project>

@@ -37,13 +37,13 @@
         </tr>
     {{/instances}}
     </tbody>
-    <div>
-        <form method="post">
-            {{#baseFields}}
-                <input type="text" name="{{tableFieldName}}" placeholder="{{tableFieldName}}">
-            {{/baseFields}}
-            <button type = "submit">Add</button>
-        </form>
-    </div>
 </table>
+<div>
+    <form method="post">
+        {{#baseFields}}
+            <input type="text" name="{{tableFieldName}}" placeholder="{{tableFieldName}}">
+        {{/baseFields}}
+        <button type = "submit">Add</button>
+    </form>
+</div>
 </body>
